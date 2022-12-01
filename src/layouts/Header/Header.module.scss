@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+
+  background-color: var(--m);
+  color: var(--w);
+  width: 483px;
+  height: 57px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0 28px;
+}
+
+.container a {
+  color: var(--w);
+  text-decoration: none;
+}
