@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import s from './App.module.scss';
 import { Header } from 'layouts/Header';
 import { Routing } from './routing';

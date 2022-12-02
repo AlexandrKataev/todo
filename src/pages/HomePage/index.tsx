@@ -1,5 +1,4 @@
 import { TaskItem } from 'entities/TaskItem';
-import { Search } from 'features/Search';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { taskService } from 'shared/api/services/taskService';
@@ -48,7 +47,7 @@ export const HomePage: React.FC = () => {
       </div>
       {taskList.length &&
         taskList
-          .filter((el) => el.title.includes(searchValue))
+          .filter((el) => el.title.toLowerCase().includes(searchValue.toLowerCase()))
           .map((el) => (
             <div key={el.id}>
               <Link to={`/task/${el.id}`}>
