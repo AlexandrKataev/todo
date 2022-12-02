@@ -16,7 +16,7 @@ export const TaskList: React.FC<TaskListProps> = ({ taskList, searchValue }) => 
             .filter((el) => el.title.toLowerCase().includes(searchValue.toLowerCase()))
             .map((el) => (
               <div key={el.id}>
-                <Link to={`todo/task/${el.id}`}>
+                <Link to={`/task/${el.id}`}>
                   <TaskItem title={el.title} />
                 </Link>
               </div>
