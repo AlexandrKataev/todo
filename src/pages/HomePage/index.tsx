@@ -21,7 +21,7 @@ export const HomePage: React.FC = () => {
     const fetch = async () => {
       try {
         const tasks = await taskService.getTaskList();
-        console.log(tasks);
+
         setTaskList(tasks);
       } catch (err) {
         console.log(err);
