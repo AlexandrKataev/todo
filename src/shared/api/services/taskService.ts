@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { baseUrl } from '../config';
 
 export interface taskData {
   id: string;
@@ -9,9 +10,7 @@ export interface taskData {
 export const taskService = {
   getTaskList: async () => {
     try {
-      const response = await axios.get<taskData[]>(
-        'https://6367d292d1d09a8fa61b5b19.mockapi.io/tasks',
-      );
+      const response = await axios.get<taskData[]>(`${baseUrl}/tasks`);
       return response.data;
     } catch (error) {
       console.error(error);
@@ -19,9 +18,7 @@ export const taskService = {
   },
   getTask: async (id: string) => {
     try {
-      const response = await axios.get<taskData>(
-        `https://6367d292d1d09a8fa61b5b19.mockapi.io/tasks/${id}`,
-      );
+      const response = await axios.get<taskData>(`${baseUrl}/tasks/${id}`);
       return response.data;
     } catch (error) {
       console.error(error);

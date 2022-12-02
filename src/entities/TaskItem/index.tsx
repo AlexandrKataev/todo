@@ -6,11 +6,11 @@ interface TaskItemProps {
   title: string;
 }
 
-export const TaskItem: React.FC<TaskItemProps> = (props) => {
+export const TaskItem: React.FC<TaskItemProps> = ({ title }) => {
   return (
     <div className={s.container}>
       <ItemIcon className={s.icon} />
-      <div className={s.title}>{props.title}</div>
+      <div className={s.title}>{title}</div>
     </div>
   );
 };
