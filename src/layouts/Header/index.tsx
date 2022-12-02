@@ -19,14 +19,14 @@ export const Header: React.FC = () => {
       document.querySelector<HTMLElement>(':root')?.style.setProperty('--b', '#d0d5f1');
       setTheme(3);
     } else if (theme === 3) {
-      document.querySelector<HTMLElement>(':root')?.style.setProperty('--m', '#92ec01');
-      document.querySelector<HTMLElement>(':root')?.style.setProperty('--m2', '#43b158');
-      document.querySelector<HTMLElement>(':root')?.style.setProperty('--b', '#ebfdd3');
+      document.querySelector<HTMLElement>(':root')?.style.setProperty('--m', '#8d8d8d');
+      document.querySelector<HTMLElement>(':root')?.style.setProperty('--m2', '#464646');
+      document.querySelector<HTMLElement>(':root')?.style.setProperty('--b', '#e2e2e2');
       setTheme(4);
     } else if (theme === 4) {
-      document.querySelector<HTMLElement>(':root')?.style.setProperty('--m', '#f1d900');
-      document.querySelector<HTMLElement>(':root')?.style.setProperty('--m2', '#c59326');
-      document.querySelector<HTMLElement>(':root')?.style.setProperty('--b', '#fbffd7');
+      document.querySelector<HTMLElement>(':root')?.style.setProperty('--m', '#464646');
+      document.querySelector<HTMLElement>(':root')?.style.setProperty('--m2', '#464646');
+      document.querySelector<HTMLElement>(':root')?.style.setProperty('--b', '#292929');
       setTheme(5);
     } else if (theme === 5) {
       document.querySelector<HTMLElement>(':root')?.style.setProperty('--m', '#f59600');
