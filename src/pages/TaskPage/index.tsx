@@ -15,6 +15,7 @@ export const TaskPage: React.FC = () => {
   const [taskData, setTaskData] = useState<taskData>({ title: '', content: '' });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetch = async () => {
       try {
         if (taskId) {
