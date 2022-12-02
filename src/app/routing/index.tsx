@@ -6,9 +6,9 @@ import { HomePage, TaskPage } from 'pages/index';
 export const Routing: React.FC = () => {
   return (
     <Routes>
-      <Route path="/home" element={<HomePage />} />
-      <Route path="/task/:taskId" element={<TaskPage />} />
-      <Route path="*" element={<Navigate to="/home" replace />} />
+      <Route path="/todo/home" element={<HomePage />} />
+      <Route path="/todo/task/:taskId" element={<TaskPage />} />
+      <Route path="*" element={<Navigate to="/todo/home" replace />} />
     </Routes>
   );
 };
