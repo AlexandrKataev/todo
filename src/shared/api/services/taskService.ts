@@ -9,19 +9,11 @@ export interface taskData {
 
 export const taskService = {
   getTaskList: async () => {
-    try {
-      const response = await axios.get<taskData[]>(`${baseUrl}/tasks`);
-      return response.data;
-    } catch (error) {
-      console.error(error);
-    }
+    const response = await axios.get<taskData[]>(`${baseUrl}/tasks`);
+    return response.data;
   },
   getTask: async (id: string) => {
-    try {
-      const response = await axios.get<taskData>(`${baseUrl}/tasks/${id}`);
-      return response.data;
-    } catch (error) {
-      console.error(error);
-    }
+    const response = await axios.get<taskData>(`${baseUrl}/tasks/${id}`);
+    return response.data;
   },
 };

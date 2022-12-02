@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import s from './HomePage.module.scss';
 
 import { taskData, taskService } from 'shared/api/services/taskService';
-import { TaskItem } from 'entities/TaskItem';
 import { Search } from 'shared/ui/Search';
+import { TaskList } from 'entities/TaskList/TaskList';
 
 export const HomePage: React.FC = () => {
   const [taskList, setTaskList] = useState<taskData[]>([]);
@@ -31,18 +30,7 @@ export const HomePage: React.FC = () => {
   return (
     <div className={s.container}>
       <Search searchValue={searchValue} onChangeSearch={onChangeSearch} />
-
-      {taskList.length
-        ? taskList
-            .filter((el) => el.title.toLowerCase().includes(searchValue.toLowerCase()))
-            .map((el) => (
-              <div key={el.id}>
-                <Link to={`/task/${el.id}`}>
-                  <TaskItem title={el.title} />
-                </Link>
-              </div>
-            ))
-        : ''}
+      <TaskList searchValue={searchValue} taskList={taskList} />
     </div>
   );
 };
