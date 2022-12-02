@@ -1,19 +1,14 @@
-import { TaskItem } from 'entities/TaskItem';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { taskService } from 'shared/api/services/taskService';
-import s from './HomePage.module.scss';
 
+import s from './HomePage.module.scss';
 import { ReactComponent as SearchIcon } from 'shared/ui/icons/search.svg';
 
-interface taskListType {
-  id: string;
-  title: string;
-  content: string;
-}
+import { taskData, taskService } from 'shared/api/services/taskService';
+import { TaskItem } from 'entities/TaskItem';
 
 export const HomePage: React.FC = () => {
-  const [taskList, setTaskList] = useState<taskListType[]>([]);
+  const [taskList, setTaskList] = useState<taskData[]>([]);
 
   const [searchValue, setSearchValue] = useState('');
 
@@ -21,8 +16,7 @@ export const HomePage: React.FC = () => {
     const fetch = async () => {
       try {
         const tasks = await taskService.getTaskList();
-
-        setTaskList(tasks);
+        tasks && setTaskList(tasks);
       } catch (err) {
         console.log(err);
       }

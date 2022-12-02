@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { taskService } from 'shared/api/services/taskService';
-import s from './TaskPage.module.scss';
 
+import s from './TaskPage.module.scss';
 import { ReactComponent as ItemIcon } from 'shared/ui/icons/item.svg';
 
-interface taskData {
-  title: string;
-  content: string;
-}
+import { taskService, taskData } from 'shared/api/services/taskService';
+
 export const TaskPage: React.FC = () => {
   const { taskId } = useParams();
 
-  const [taskData, setTaskData] = useState<taskData>({ title: '', content: '' });
+  const [taskData, setTaskData] = useState<taskData>({ title: '', content: '', id: '' });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,7 +17,7 @@ export const TaskPage: React.FC = () => {
       try {
         if (taskId) {
           const task = await taskService.getTask(taskId);
-          setTaskData(task);
+          task && setTaskData(task);
         }
       } catch (err) {
         console.log(err);
