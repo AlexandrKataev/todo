@@ -10,7 +10,7 @@ interface TaskListProps {
 
 export const TaskList: React.FC<TaskListProps> = ({ taskList, searchValue }) => {
   return (
-    <div>
+    <>
       {taskList.length
         ? taskList
             .filter((el) => el.title.toLowerCase().includes(searchValue.toLowerCase()))
@@ -22,6 +22,6 @@ export const TaskList: React.FC<TaskListProps> = ({ taskList, searchValue }) => 
               </div>
             ))
         : ''}
-    </div>
+    </>
   );
 };
