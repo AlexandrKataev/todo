@@ -1,6 +1,6 @@
 # TODO
 
-http://AlexandrKataev.github.io/todo3
+http://alexandrkataev.github.io/todo/home
 
 1. `git clone https://github.com/AlexandrKataev/todo3.git`
 2. `npm install`
