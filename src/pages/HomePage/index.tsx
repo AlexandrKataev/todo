@@ -45,16 +45,17 @@ export const HomePage: React.FC = () => {
         />
         <SearchIcon className={s.icon} />
       </div>
-      {taskList.length &&
-        taskList
-          .filter((el) => el.title.toLowerCase().includes(searchValue.toLowerCase()))
-          .map((el) => (
-            <div key={el.id}>
-              <Link to={`/task/${el.id}`}>
-                <TaskItem title={el.title} />
-              </Link>
-            </div>
-          ))}
+      {taskList.length
+        ? taskList
+            .filter((el) => el.title.toLowerCase().includes(searchValue.toLowerCase()))
+            .map((el) => (
+              <div key={el.id}>
+                <Link to={`/task/${el.id}`}>
+                  <TaskItem title={el.title} />
+                </Link>
+              </div>
+            ))
+        : ''}
     </div>
   );
 };
