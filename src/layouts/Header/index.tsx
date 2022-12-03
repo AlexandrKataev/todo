@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
 
   return (
     <div className={s.container}>
-      {pathname === '/home' ? <div>Searching</div> : <Link to="/home">Назад</Link>}
+      {pathname === '/' ? <div>Searching</div> : <Link to="/">Назад</Link>}
       <ThemeIcon className={s.theme} onClick={onChangeTheme} />
     </div>
   );
