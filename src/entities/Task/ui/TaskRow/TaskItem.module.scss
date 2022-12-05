@@ -1,0 +1,31 @@
+.container {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 11px;
+  margin-top: 16px;
+  height: 55px;
+  width: 426px;
+  max-width: 82vw;
+  border-radius: 5px;
+
+  background: var(--g3);
+  border-radius: 5px;
+  &:hover {
+    opacity: 0.8;
+    color: var(--m);
+  }
+}
+
+.icon {
+  fill: var(--m);
+  width: 37px;
+  height: 37px;
+}
+
+.title {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
