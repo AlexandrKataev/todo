@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import s from './Header.module.scss';
-import { ReactComponent as ThemeIcon } from 'shared/ui/icons/theme.svg';
+import styles from './Header.module.scss';
 
-export const Header: React.FC = () => {
+import { ReactComponent as ThemeIcon } from '@icons/theme.svg';
+
+export const Header: FC = () => {
   const { pathname } = useLocation();
   const [theme, setTheme] = useState(1);
 
@@ -42,9 +43,9 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <div className={s.container}>
+    <div className={styles.container}>
       {pathname === '/' ? <div>Searching</div> : <Link to="/">Назад</Link>}
-      <ThemeIcon className={s.theme} onClick={onChangeTheme} />
+      <ThemeIcon className={styles.theme} onClick={onChangeTheme} />
     </div>
   );
 };

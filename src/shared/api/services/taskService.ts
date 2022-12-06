@@ -1,19 +1,14 @@
 import axios from 'axios';
-import { baseUrl } from '../config';
-
-export interface taskData {
-  id: string;
-  title: string;
-  content: string;
-}
+import { ITask } from '@shared/models/ITask';
+import { baseUrl } from '@shared/api/config';
 
 export const taskService = {
-  getTaskList: async () => {
-    const response = await axios.get<taskData[]>(`${baseUrl}/tasks`);
+  getTaskList: async (searchValue: string) => {
+    const response = await axios.get<ITask[]>(`${baseUrl}/tasks?search=${searchValue}`);
     return response.data;
   },
   getTask: async (id: string) => {
-    const response = await axios.get<taskData>(`${baseUrl}/tasks/${id}`);
+    const response = await axios.get<ITask>(`${baseUrl}/tasks/${id}`);
     return response.data;
   },
 };

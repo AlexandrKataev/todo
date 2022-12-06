@@ -1,9 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { HomePage, TaskPage } from 'pages/index';
+import { HomePage, TaskPage } from '@pages/index';
 
-export const Routing: React.FC = () => {
+export const Routing: FC = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />

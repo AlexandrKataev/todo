@@ -44,6 +44,7 @@
   color: var(--g2);
   &::placeholder {
     color: var(--g);
+    user-select: none;
   }
 }
 
@@ -52,4 +53,17 @@
   left: 20px;
   top: 11px;
   fill: var(--g);
+}
+
+.clear {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  fill: var(--g2);
+  &:hover {
+    fill: var(--m);
+  }
 }
