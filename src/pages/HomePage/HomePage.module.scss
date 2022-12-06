@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 0 0 20px 20px;
-  background-color: var(--w);
+  background-color: var(--content-background-color);
   width: 483px;
   max-width: 90vw;
 
@@ -15,6 +15,6 @@
 }
 
 .container a {
-  color: var(--m2);
+  color: var(--main-color2);
   text-decoration: none;
 }

@@ -5,8 +5,8 @@
   align-items: center;
   border-radius: 20px 20px 0 0;
 
-  background-color: var(--m);
-  color: var(--w);
+  background-color: var(--header-background-color);
+  color: var(--header-text-color);
   width: 483px;
   max-width: 90vw;
   height: 57px;
@@ -17,7 +17,7 @@
 }
 
 .container a {
-  color: var(--w);
+  color: var(--header-text-color);
   text-decoration: none;
 }
 
@@ -25,6 +25,6 @@
   width: 24px;
   height: 24px;
   margin-left: auto;
-  fill: var(--w);
+  fill: var(--header-text-color);
   cursor: pointer;
 }

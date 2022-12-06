@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 export const SearchIcon: FC = ({
   height = '37px',
   width = '37px',
-  color = 'var(--m)',
+  color = 'var(--main-color)',
   ...props
 }: React.SVGProps<SVGSVGElement>) => {
   return (

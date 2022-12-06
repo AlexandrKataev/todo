@@ -9,21 +9,22 @@
   max-width: 82vw;
   border-radius: 5px;
 
-  background: var(--g3);
+  background: var(--grey-color3);
   border-radius: 5px;
   &:hover {
     opacity: 0.8;
-    color: var(--m);
+    color: var(--main-color);
   }
 }
 
 .icon {
-  fill: var(--m);
+  fill: var(--main-color);
   width: 37px;
   height: 37px;
 }
 
 .title {
+  color: var(--content-text-color);
   margin-left: 20px;
   font-size: 16px;
   font-weight: 400;

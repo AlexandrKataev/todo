@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 0 0 20px 20px;
-  background-color: var(--w);
+  background-color: var(--content-background-color);
   width: 483px;
 
   min-height: 100vh;
@@ -14,7 +14,7 @@
 }
 
 .container a {
-  color: var(--m2);
+  color: var(--main-color2);
   text-decoration: none;
 }
 
@@ -24,12 +24,12 @@
   max-width: 82vw;
   height: 42px;
   position: relative;
-  background: #ffffff;
+
   &:hover .input {
-    border: 1px solid var(--m);
+    border: 1px solid var(--main-color);
   }
   &:hover .icon {
-    fill: var(--m);
+    fill: var(--main-color);
   }
 }
 
@@ -38,12 +38,14 @@
   width: 426px;
   max-width: 82vw;
   height: 42px;
-  border: 1px solid var(--g);
+  border: 1px solid var(--grey-color);
   border-radius: 5px;
   padding-left: 50px;
-  color: var(--g2);
+  background-color: var(--content-background-color);
+  color: var(--grey-color2);
+
   &::placeholder {
-    color: var(--g);
+    color: var(--grey-color);
     user-select: none;
   }
 }
@@ -52,7 +54,7 @@
   position: absolute;
   left: 20px;
   top: 11px;
-  fill: var(--g);
+  fill: var(--grey-color);
 }
 
 .clear {
@@ -62,8 +64,8 @@
   position: absolute;
   right: 16px;
   top: 14px;
-  fill: var(--g2);
+  fill: var(--grey-color2);
   &:hover {
-    fill: var(--m);
+    fill: var(--main-color);
   }
 }
