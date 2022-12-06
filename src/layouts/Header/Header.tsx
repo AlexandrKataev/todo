@@ -19,7 +19,6 @@ export const Header: FC = () => {
   const { pathname } = useLocation();
 
   const [theme, setTheme] = useState(getTheme);
-
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem('theme', theme);

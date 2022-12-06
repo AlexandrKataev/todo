@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 export const CrossIcon: FC = ({
   height = '37px',
   width = '37px',
-  color = 'var(--main-color)',
+  color = 'var(--color-main)',
   ...props
 }: React.SVGProps<SVGSVGElement>) => {
   return (

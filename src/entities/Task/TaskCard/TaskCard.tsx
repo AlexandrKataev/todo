@@ -10,7 +10,7 @@ import { ItemIcon } from 'shared/ui/icons/ItemIcon';
 const iconProps: React.SVGProps<SVGSVGElement> = {
   width: '100px',
   height: '100px',
-  fill: 'var(--main-color)',
+  fill: 'var(--color-main)',
 };
 
 export const TaskCard: FC = () => {
