@@ -2,10 +2,16 @@ import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import styles from './TaskCard.module.scss';
-import { ReactComponent as ItemIcon } from 'shared/ui/icons/item.svg';
 
 import { taskService } from 'shared/api/services/taskService';
 import { ITask } from 'shared/models/ITask';
+import { ItemIcon } from 'shared/ui/icons/ItemIcon';
+
+const iconProps: React.SVGProps<SVGSVGElement> = {
+  width: '100px',
+  height: '100px',
+  fill: 'var(--m)',
+};
 
 export const TaskCard: FC = () => {
   const { taskId } = useParams();
@@ -29,7 +35,7 @@ export const TaskCard: FC = () => {
 
   return (
     <>
-      <ItemIcon className={styles.icon} />
+      <ItemIcon {...iconProps} />
       <div className={styles.title}>{taskData.title}</div>
       <div className={styles.content}>{taskData.content}</div>
     </>
