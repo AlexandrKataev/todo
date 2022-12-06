@@ -2,10 +2,10 @@ import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import styles from './TaskCard.module.scss';
-import { ReactComponent as ItemIcon } from '@icons/item.svg';
+import { ReactComponent as ItemIcon } from 'shared/ui/icons/item.svg';
 
-import { ITask } from '@models/ITask';
-import { taskService } from '@services/taskService';
+import { taskService } from 'shared/api/services/taskService';
+import { ITask } from 'shared/models/ITask';
 
 export const TaskCard: FC = () => {
   const { taskId } = useParams();

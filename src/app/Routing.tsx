@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { HomePage, TaskPage } from '@pages/index';
+import { HomePage, TaskPage } from 'pages/index';
 
 export const Routing: FC = () => {
   return (

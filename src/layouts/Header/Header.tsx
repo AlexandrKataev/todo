@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.scss';
 
-import { ReactComponent as ThemeIcon } from '@icons/theme.svg';
+import { ReactComponent as ThemeIcon } from 'shared/ui/icons/theme.svg';
 
 export const Header: FC = () => {
   const { pathname } = useLocation();

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styles from './TaskPage.module.scss';
 
-import { TaskCard } from '@entities/index';
+import { TaskCard } from 'entities/index';
 
 export const TaskPage: FC = () => {
   return (

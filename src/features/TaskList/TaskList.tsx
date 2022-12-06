@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { TaskRow } from '@entities/index';
-import { ITask } from '@models/ITask';
+import { ITask } from 'shared/models/ITask';
+import { TaskRow } from 'entities/index';
 
 interface TaskListProps {
   taskList: ITask[];

@@ -2,8 +2,8 @@ import { ChangeEvent, FC } from 'react';
 
 import styles from './Search.module.scss';
 
-import { ReactComponent as SearchIcon } from '@icons/search.svg';
-import { ReactComponent as ClearIcon } from '@icons/clear.svg';
+import { ReactComponent as SearchIcon } from 'shared/ui/icons/search.svg';
+import { ReactComponent as ClearIcon } from 'shared/ui/icons/clear.svg';
 
 interface SearchProps {
   searchValue: string;
