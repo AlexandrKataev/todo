@@ -7,7 +7,8 @@
   --color-header-background: #a900c5;
   --color-background: #edd0f1;
   --color-row-background: #e2e2e2;
-  --color-search-text: #a8a8a8;
+  --color-search: #a1a1a1;
+  --color-search-border: #cecece;
 }
 
 :root[data-theme='dark'] {
@@ -18,6 +19,7 @@
   --color-header-text: #f0c8f1;
   --color-header-background: #710aa1;
   --color-background: #2e2b3f;
-  --color-row-background: #7961f1;
-  --color-search-text: #f0c8f1;
+  --color-row-background: #2e2b3f;
+  --color-search: #f0c8f1;
+  --color-search-border: #7120ea;
 }
