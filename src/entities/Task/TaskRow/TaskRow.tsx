@@ -17,7 +17,7 @@ export const TaskRow: FC<TaskRowProps> = ({ title, id }) => {
   const [onMouseDelete, setOnMouseDelete] = useState(false);
   const [onMouseRow, setOnMouseRow] = useState(false);
   const onClickDelete = () => {
-    if (window.confirm()) {
+    if (window.confirm('Delete task?')) {
       taskService.deleteTask(id);
     }
   };
