@@ -15,15 +15,12 @@
   max-width: 82vw;
   height: 270px;
   color: var(--color-content-text);
-  background-color: var(--color-content-background);
+  background-color: var(--color-row-background);
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
   letter-spacing: 0em;
   text-align: left;
-  &:focus {
-    background-color: var(--color-row-background);
-  }
 }
 
 .title {
@@ -31,16 +28,13 @@
   max-width: 82vw;
   height: 40px;
   color: var(--color-content-text);
-  background-color: var(--color-content-background);
+  background-color: var(--color-row-background);
   margin: 36px 0 4px 0;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0em;
   text-align: center;
   border-radius: 10px;
-  &:focus {
-    background-color: var(--color-row-background);
-  }
 }
 
 .save {
@@ -54,6 +48,7 @@
   background-color: var(--color-content-background);
   color: var(--color-main);
 }
+
 .save_disabled {
   margin: auto 0 0px 0;
   width: 80px;

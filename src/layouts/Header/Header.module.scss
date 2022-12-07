@@ -16,15 +16,23 @@
   padding: 0 28px;
 }
 
-.container a {
-  color: var(--color-header-text);
-  text-decoration: none;
+.icons {
+  display: flex;
+  margin-left: auto;
 }
 
 .theme {
   width: 24px;
   height: 24px;
-  margin-left: auto;
   fill: var(--color-header-text);
+  margin-left: 18px;
+}
+
+.container svg {
   cursor: pointer;
+}
+
+.container a {
+  color: var(--color-header-text);
+  text-decoration: none;
 }

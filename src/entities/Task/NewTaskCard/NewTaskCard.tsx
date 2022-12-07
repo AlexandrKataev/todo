@@ -1,12 +1,11 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import styles from './TaskCard.module.scss';
+import styles from './NewTaskCard.module.scss';
 
 import { taskService } from 'shared/api/services/taskService';
 import { ITask } from 'shared/models/ITask';
 import { ItemIcon } from 'shared/ui/icons/ItemIcon';
-import { ClipLoader } from 'react-spinners';
 
 const iconProps: React.SVGProps<SVGSVGElement> = {
   width: '100px',
@@ -14,11 +13,9 @@ const iconProps: React.SVGProps<SVGSVGElement> = {
   fill: 'var(--color-main)',
 };
 
-export const TaskCard: FC = () => {
+export const NewTaskCard: FC = () => {
   const { taskId } = useParams();
   const navigate = useNavigate();
-
-  const [taskData, setTaskData] = useState<ITask>({} as ITask);
 
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
@@ -31,26 +28,11 @@ export const TaskCard: FC = () => {
     setInputContent(event.target.value);
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    const fetch = async () => {
-      try {
-        if (taskId) {
-          const task = await taskService.getTask(taskId);
-          task && setTaskData(task);
-          setInputTitle(task.title);
-          setInputContent(task.content);
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetch();
-  }, []);
-
   const postTask = async () => {
-    await taskService.updateTask({ id: taskData.id, title: inputTitle, content: inputContent });
-    navigate('/');
+    if (inputTitle && inputContent) {
+      await taskService.createTask({ title: inputTitle, content: inputContent } as ITask);
+      navigate('/');
+    }
   };
 
   return (
@@ -66,16 +48,6 @@ export const TaskCard: FC = () => {
         className={styles.contentArea}
         value={inputContent}
         onChange={onChangeInputContent}
-      />
-      <ClipLoader
-        color={'var(--color-main)'}
-        loading={!taskData.content}
-        cssOverride={{
-          position: 'absolute',
-          top: '45vh',
-        }}
-        size={50}
-        speedMultiplier={0.5}
       />
       <button
         onClick={postTask}

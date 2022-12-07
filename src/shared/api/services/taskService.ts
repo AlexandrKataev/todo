@@ -15,4 +15,10 @@ export const taskService = {
   updateTask: async (task: ITask) => {
     await axios.put(`${baseUrl}/tasks/${task.id}`, task);
   },
+  createTask: async (task: ITask) => {
+    await axios.post(`${baseUrl}/tasks/`, task);
+  },
+  deleteTask: async (taskId: string) => {
+    await axios.delete(`${baseUrl}/tasks/${taskId}`);
+  },
 };

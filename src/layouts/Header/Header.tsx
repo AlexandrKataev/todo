@@ -1,8 +1,9 @@
 import React, { FC, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from './Header.module.scss';
 
 import { ReactComponent as ThemeIcon } from 'shared/ui/icons/theme.svg';
+import { PlusIcon } from 'shared/ui/icons/PlusIcon';
 
 const themes = {
   dark: 'dark',
@@ -17,6 +18,7 @@ const getTheme = () => {
 
 export const Header: FC = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const [theme, setTheme] = useState(getTheme);
   useEffect(() => {
@@ -24,15 +26,22 @@ export const Header: FC = () => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  const onCLickNewTask = () => {
+    navigate('task/new');
+  };
+
   return (
     <div className={styles.container}>
       {pathname === '/' ? <div>Searching</div> : <Link to="/">Назад</Link>}
-      <ThemeIcon
-        className={styles.theme}
-        onClick={() => {
-          theme === themes.light ? setTheme(themes.dark) : setTheme(themes.light);
-        }}
-      />
+      <div className={styles.icons}>
+        <PlusIcon onClick={onCLickNewTask} width={'18px'} fill={'var(--color-header-text)'} />
+        <ThemeIcon
+          className={styles.theme}
+          onClick={() => {
+            theme === themes.light ? setTheme(themes.dark) : setTheme(themes.light);
+          }}
+        />
+      </div>
     </div>
   );
 };

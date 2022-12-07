@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, SetStateAction } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ITask } from 'shared/models/ITask';
@@ -14,9 +14,7 @@ export const TaskList: FC<TaskListProps> = ({ taskList }) => {
       {taskList.length
         ? taskList.map((el) => (
             <div key={el.id}>
-              <Link to={`/task/${el.id}`}>
-                <TaskRow title={el.title} />
-              </Link>
+              <TaskRow title={el.title} id={el.id} />
             </div>
           ))
         : ''}
