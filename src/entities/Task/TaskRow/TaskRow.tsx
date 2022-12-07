@@ -16,9 +16,10 @@ export const TaskRow: FC<TaskRowProps> = ({ title, id }) => {
   const navigate = useNavigate();
   const [onMouseDelete, setOnMouseDelete] = useState(false);
   const [onMouseRow, setOnMouseRow] = useState(false);
-  const onClickDelete = () => {
+  const onClickDelete = async () => {
     if (window.confirm('Delete task?')) {
-      taskService.deleteTask(id);
+      await taskService.deleteTask(id);
+      navigate('/qweqwe');
     }
   };
   const onClickTask = () => {
