@@ -12,4 +12,7 @@ export const taskService = {
     const response = await axios.get<ITask>(`${baseUrl}/tasks/${id}`);
     return response.data;
   },
+  updateTask: async (task: ITask) => {
+    await axios.put(`${baseUrl}/tasks/${task.id}`, task);
+  },
 };
