@@ -6,6 +6,7 @@ import styles from './TaskCard.module.scss';
 import { taskService } from 'shared/api/services/taskService';
 import { ITask } from 'shared/models/ITask';
 import { ItemIcon } from 'shared/ui/icons/ItemIcon';
+import { ClipLoader } from 'react-spinners';
 
 const iconProps: React.SVGProps<SVGSVGElement> = {
   width: '100px',
@@ -38,6 +39,16 @@ export const TaskCard: FC = () => {
       <ItemIcon {...iconProps} />
       <div className={styles.title}>{taskData.title}</div>
       <div className={styles.content}>{taskData.content}</div>
+      <ClipLoader
+        color={'var(--color-main)'}
+        loading={!taskData.content}
+        cssOverride={{
+          position: 'absolute',
+          top: '45vh',
+        }}
+        size={50}
+        speedMultiplier={0.5}
+      />
     </>
   );
 };

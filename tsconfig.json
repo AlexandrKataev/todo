@@ -2,17 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "baseUrl": "./src",
-    "paths": {
-      // "@app/*": ["app/*"],
-      // "@entities/*": ["entities/*"],
-      // "@features/*": ["features/*"],
-      // "@layouts/*": ["layouts/*"],
-      // "@pages/*": ["pages/*"],
-      // "@shared/*": ["shared/*"],
-      // "@models/*": ["shared/models/*"],
-      // "@services/*": ["shared/api/services/*"],
-      // "@icons/*": ["shared/ui/icons/*"]
-    },
+
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
