@@ -1,9 +1,9 @@
-import React, { FC, SetStateAction, useState } from 'react';
+import { FC, useState } from 'react';
 import styles from './TaskRow.module.scss';
 
 import { ITask } from 'shared/models/ITask';
-import { ItemIcon } from 'shared/ui/icons/ItemIcon';
-import { TrashIcon } from 'shared/ui/icons/TrashIcon';
+import { ItemIcon, TrashIcon } from 'shared/ui';
+
 import { taskService } from 'shared/api/services/taskService';
 import { useNavigate } from 'react-router-dom';
 

@@ -49,8 +49,10 @@ export const TaskCard: FC = () => {
   }, []);
 
   const postTask = async () => {
-    await taskService.updateTask({ id: taskData.id, title: inputTitle, content: inputContent });
-    navigate('/');
+    if (inputTitle && inputContent) {
+      await taskService.updateTask({ id: taskData.id, title: inputTitle, content: inputContent });
+      navigate('/');
+    }
   };
 
   return (
