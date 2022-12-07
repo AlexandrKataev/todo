@@ -11,15 +11,17 @@ import { ClipLoader } from 'react-spinners';
 
 export const HomePage: FC = () => {
   const [taskList, setTaskList] = useState<ITask[]>([]);
-
   const [searchValue, setSearchValue] = useState('');
+  const [loading, setLoading] = useState(true);
   const debouncedValue = useDebounce(searchValue, 500);
 
   useEffect(() => {
     const fetch = async () => {
       try {
+        !taskList.length && setLoading(true);
         const tasks = await taskService.getTaskList(searchValue);
         tasks && setTaskList(tasks);
+        setLoading(false);
       } catch (err) {
         console.log(err);
       }
@@ -44,7 +46,7 @@ export const HomePage: FC = () => {
       <TaskList taskList={taskList} />
       <ClipLoader
         color={'var(--color-main)'}
-        loading={!taskList.length}
+        loading={loading}
         cssOverride={{
           position: 'absolute',
           top: '45vh',
