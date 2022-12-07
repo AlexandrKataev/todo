@@ -5,8 +5,8 @@ import styles from './TaskCard.module.scss';
 
 import { taskService } from 'shared/api/services/taskService';
 import { ITask } from 'shared/models/ITask';
-import { ItemIcon } from 'shared/ui/icons/ItemIcon';
-import { ClipLoader } from 'react-spinners';
+
+import { Loader, ItemIcon } from 'shared/ui';
 
 const iconProps: React.SVGProps<SVGSVGElement> = {
   width: '100px',
@@ -55,6 +55,7 @@ export const TaskCard: FC = () => {
 
   return (
     <>
+      <Loader loading={!taskData.content} />
       <ItemIcon {...iconProps} />
       <input
         className={styles.title}
@@ -67,16 +68,7 @@ export const TaskCard: FC = () => {
         value={inputContent}
         onChange={onChangeInputContent}
       />
-      <ClipLoader
-        color={'var(--color-main)'}
-        loading={!taskData.content}
-        cssOverride={{
-          position: 'absolute',
-          top: '45vh',
-        }}
-        size={50}
-        speedMultiplier={0.5}
-      />
+
       <button
         onClick={postTask}
         className={inputTitle && inputContent ? styles.save : styles.save_disabled}>

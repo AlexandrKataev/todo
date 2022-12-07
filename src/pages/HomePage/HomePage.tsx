@@ -6,8 +6,8 @@ import styles from './HomePage.module.scss';
 import { taskService } from 'shared/api/services/taskService';
 import { useDebounce } from 'shared/hooks';
 import { ITask } from 'shared/models/ITask';
-import { Search } from 'shared/ui/Search';
-import { ClipLoader } from 'react-spinners';
+
+import { Loader, Search } from 'shared/ui';
 
 export const HomePage: FC = () => {
   const [taskList, setTaskList] = useState<ITask[]>([]);
@@ -44,16 +44,7 @@ export const HomePage: FC = () => {
         clearSearch={onClearSearchClick}
       />
       <TaskList taskList={taskList} />
-      <ClipLoader
-        color={'var(--color-main)'}
-        loading={loading}
-        cssOverride={{
-          position: 'absolute',
-          top: '45vh',
-        }}
-        size={50}
-        speedMultiplier={0.5}
-      />
+      <Loader loading={loading} />
     </div>
   );
 };
