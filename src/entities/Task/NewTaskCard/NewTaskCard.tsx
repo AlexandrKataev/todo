@@ -9,7 +9,7 @@ import { ItemIcon } from 'shared/ui/icons/ItemIcon';
 
 export const NewTaskCard: FC = () => {
   const navigate = useNavigate();
-
+  // cosnt [value: inputTitle, onChange: onChangeInputTitle] = useInput()
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
 
@@ -17,13 +17,18 @@ export const NewTaskCard: FC = () => {
     setInputTitle(event.target.value);
   };
 
-  const onChangeInputContent = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const onChangeInputContent = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     setInputContent(event.target.value);
   };
 
   const postTask = async () => {
     if (inputTitle && inputContent) {
-      await taskService.createTask({ title: inputTitle, content: inputContent } as ITask);
+      await taskService.createTask({
+        title: inputTitle,
+        content: inputContent,
+      } as ITask);
       navigate('/');
     }
   };
@@ -44,7 +49,10 @@ export const NewTaskCard: FC = () => {
       />
       <button
         onClick={postTask}
-        className={inputTitle && inputContent ? styles.save : styles.save_disabled}>
+        className={
+          inputTitle && inputContent ? styles.save : styles.save_disabled
+        }
+      >
         Save
       </button>
     </>

@@ -1,16 +1,14 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 
 import styles from './HomePage.module.scss';
 
 import { Search, TaskList } from 'features';
-import { taskService } from 'shared/api/services/taskService';
-import { useDebounce } from 'shared/hooks';
-import { ITask } from 'shared/models/ITask';
-
-import { Loader } from 'shared/ui';
+import { useTasks } from '../../shared/hooks/useTasks';
 
 export const HomePage: FC = () => {
   const [searchValue, setSearchValue] = useState('');
+  const { taskList, postTask, onClickDelete, loading } = useTasks(searchValue);
+  // https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/context/
 
   const onChangeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
