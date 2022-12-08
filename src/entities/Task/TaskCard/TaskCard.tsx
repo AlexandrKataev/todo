@@ -16,12 +16,15 @@ export const TaskCard: FC = () => {
 
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
+  const [taskChanged, setTaskChanged] = useState(false);
 
   const onChangeInputTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
+    !taskChanged && setTaskChanged(true);
     setInputTitle(event.target.value);
   };
 
   const onChangeInputContent = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    !taskChanged && setTaskChanged(true);
     setInputContent(event.target.value);
   };
 
@@ -67,7 +70,7 @@ export const TaskCard: FC = () => {
 
       <button
         onClick={postTask}
-        className={inputTitle && inputContent ? styles.save : styles.save_disabled}>
+        className={taskChanged && inputTitle && inputContent ? styles.save : styles.save_disabled}>
         Save
       </button>
     </>
