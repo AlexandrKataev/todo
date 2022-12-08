@@ -10,24 +10,7 @@ import { ITask } from 'shared/models/ITask';
 import { Loader } from 'shared/ui';
 
 export const HomePage: FC = () => {
-  const [taskList, setTaskList] = useState<ITask[]>([]);
   const [searchValue, setSearchValue] = useState('');
-  const [loading, setLoading] = useState(true);
-  const debouncedValue = useDebounce(searchValue, 500);
-
-  useEffect(() => {
-    const fetch = async () => {
-      try {
-        !taskList.length && setLoading(true);
-        const tasks = await taskService.getTaskList(searchValue);
-        tasks && setTaskList(tasks);
-        setLoading(false);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetch();
-  }, [debouncedValue]);
 
   const onChangeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
@@ -43,8 +26,7 @@ export const HomePage: FC = () => {
         onChangeSearch={onChangeSearch}
         clearSearch={onClearSearchClick}
       />
-      <TaskList taskList={taskList} />
-      <Loader loading={loading} />
+      <TaskList searchValue={searchValue} />
     </div>
   );
 };

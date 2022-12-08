@@ -10,9 +10,10 @@ import { taskService } from 'shared/api/services/taskService';
 interface TaskRowProps {
   id: ITask['id'];
   title: ITask['title'];
+  setTaskList: React.Dispatch<React.SetStateAction<ITask[]>>;
 }
 
-export const TaskRow: FC<TaskRowProps> = ({ title, id }) => {
+export const TaskRow: FC<TaskRowProps> = ({ title, id, setTaskList }) => {
   const navigate = useNavigate();
   const [onMouseDelete, setOnMouseDelete] = useState(false);
   const [onMouseRow, setOnMouseRow] = useState(false);
@@ -20,7 +21,7 @@ export const TaskRow: FC<TaskRowProps> = ({ title, id }) => {
   const onClickDelete = async () => {
     if (window.confirm('Delete task?')) {
       await taskService.deleteTask(id);
-      navigate('/qweqwe');
+      setTaskList([]);
     }
   };
   const onClickTask = () => {
