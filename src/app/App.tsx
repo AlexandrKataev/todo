@@ -1,10 +1,10 @@
-import styles from './App.module.scss';
+import './App.scss';
 import { Header } from 'layouts/Header';
 import { Routing } from './Routing';
 
 function App() {
   return (
-    <div className={styles.app}>
+    <div className="app">
       <Header />
       <Routing />
     </div>

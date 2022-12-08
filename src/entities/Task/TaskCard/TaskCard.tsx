@@ -8,12 +8,6 @@ import { ITask } from 'shared/models/ITask';
 
 import { Loader, ItemIcon } from 'shared/ui';
 
-const iconProps: React.SVGProps<SVGSVGElement> = {
-  width: '100px',
-  height: '100px',
-  fill: 'var(--color-main)',
-};
-
 export const TaskCard: FC = () => {
   const { taskId } = useParams();
   const navigate = useNavigate();
@@ -58,7 +52,7 @@ export const TaskCard: FC = () => {
   return (
     <>
       <Loader loading={!taskData.content} />
-      <ItemIcon {...iconProps} />
+      <ItemIcon width={'100px'} />
       <input
         className={styles.title}
         value={inputTitle}

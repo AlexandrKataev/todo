@@ -2,8 +2,7 @@ import { ChangeEvent, FC } from 'react';
 
 import styles from './Search.module.scss';
 
-import { ReactComponent as SearchIcon } from 'shared/ui/icons/search.svg';
-import { ReactComponent as ClearIcon } from 'shared/ui/icons/clear.svg';
+import { CrossIcon, SearchIcon } from '../icons';
 
 interface SearchProps {
   searchValue: string;
@@ -20,8 +19,15 @@ export const Search: FC<SearchProps> = ({ searchValue, onChangeSearch, clearSear
         value={searchValue}
         onChange={onChangeSearch}
       />
-      <SearchIcon className={styles.icon} />
-      {searchValue && <ClearIcon className={styles.clear} onClick={clearSearch} />}
+      <div className={styles.search_icon}>
+        <SearchIcon />
+      </div>
+
+      {searchValue && (
+        <div className={styles.clear}>
+          <CrossIcon onClick={clearSearch} />
+        </div>
+      )}
     </div>
   );
 };

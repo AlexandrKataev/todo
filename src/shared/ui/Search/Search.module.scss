@@ -1,23 +1,3 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 0 0 20px 20px;
-  background-color: var(--color-content-background);
-  width: 483px;
-
-  min-height: 100vh;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  padding-bottom: 20px;
-}
-
-.container a {
-  color: var(--color-main-2);
-  text-decoration: none;
-}
-
 .search {
   margin-top: 16px;
   width: 426px;
@@ -46,14 +26,15 @@
 
   &::placeholder {
     color: var(--color-search-border);
+    opacity: 0.5;
     user-select: none;
   }
 }
 
-.icon {
+.search_icon {
   position: absolute;
   left: 20px;
-  top: 11px;
+  top: 13px;
   fill: var(--color-search-border);
 }
 
@@ -64,8 +45,9 @@
   position: absolute;
   right: 16px;
   top: 14px;
-  fill: var(--color-search);
+  fill: var(--color-main);
+  opacity: 0.5;
   &:hover {
-    fill: var(--color-main);
+    opacity: 1;
   }
 }

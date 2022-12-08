@@ -7,14 +7,7 @@ import { taskService } from 'shared/api/services/taskService';
 import { ITask } from 'shared/models/ITask';
 import { ItemIcon } from 'shared/ui/icons/ItemIcon';
 
-const iconProps: React.SVGProps<SVGSVGElement> = {
-  width: '100px',
-  height: '100px',
-  fill: 'var(--color-main)',
-};
-
 export const NewTaskCard: FC = () => {
-  const { taskId } = useParams();
   const navigate = useNavigate();
 
   const [inputTitle, setInputTitle] = useState('');
@@ -37,7 +30,7 @@ export const NewTaskCard: FC = () => {
 
   return (
     <>
-      <ItemIcon {...iconProps} />
+      <ItemIcon width={'100px'} />
       <input
         className={styles.title}
         value={inputTitle}

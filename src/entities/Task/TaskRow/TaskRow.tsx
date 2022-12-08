@@ -31,17 +31,14 @@ export const TaskRow: FC<TaskRowProps> = ({ title, id }) => {
       onMouseOver={() => setOnMouseRow(true)}
       onMouseOut={() => setOnMouseRow(false)}
       onClick={onClickTask}>
-      <div>
-        <ItemIcon />
-      </div>
+      <ItemIcon width={'37px'} />
+
       <div className={styles.title}>{title}</div>
       <div
         className={styles.trash}
         onMouseOver={() => setOnMouseDelete(true)}
         onMouseOut={() => setOnMouseDelete(false)}>
-        {onMouseRow && (
-          <TrashIcon width={'20px'} fill={'var(--color-main)'} onClick={onClickDelete} />
-        )}
+        {onMouseRow && <TrashIcon width={'20px'} onClick={onClickDelete} />}
       </div>
     </div>
   );

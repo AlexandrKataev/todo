@@ -1,5 +1,4 @@
-import { FC, SetStateAction } from 'react';
-import { Link } from 'react-router-dom';
+import { FC } from 'react';
 
 import { ITask } from 'shared/models/ITask';
 import { TaskRow } from 'entities/index';
