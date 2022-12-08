@@ -1,13 +1,13 @@
-import { TaskList } from 'features';
 import React, { FC, useEffect, useState } from 'react';
 
 import styles from './HomePage.module.scss';
 
+import { Search, TaskList } from 'features';
 import { taskService } from 'shared/api/services/taskService';
 import { useDebounce } from 'shared/hooks';
 import { ITask } from 'shared/models/ITask';
 
-import { Loader, Search } from 'shared/ui';
+import { Loader } from 'shared/ui';
 
 export const HomePage: FC = () => {
   const [taskList, setTaskList] = useState<ITask[]>([]);

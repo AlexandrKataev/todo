@@ -2,7 +2,7 @@ import { ChangeEvent, FC } from 'react';
 
 import styles from './Search.module.scss';
 
-import { CrossIcon, SearchIcon } from '../icons';
+import { CrossIcon, SearchIcon } from 'shared/ui/icons';
 
 interface SearchProps {
   searchValue: string;
