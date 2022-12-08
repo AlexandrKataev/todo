@@ -35,12 +35,15 @@ export const TaskList: FC<TaskListProps> = ({ searchValue }) => {
     <>
       {taskList.length ? (
         taskList.map((el) => (
+
           <TaskRow
             key={el.id}
             title={el.title}
             id={el.id}
             setTaskList={setTaskList}
           />
+          <TaskRow title={el.title} id={el.id} setTaskList={setTaskList} key={el.id} />
+
         ))
       ) : (
         <Loader loading={loading} />
