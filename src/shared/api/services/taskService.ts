@@ -4,8 +4,9 @@ import { baseUrl } from '../config';
 
 export const taskService = {
   getTaskList: async (searchValue: string) => {
-    const response = await axios.get<ITask[]>(`${baseUrl}/tasks?title=${searchValue}`);
-
+    const response = await axios.get<ITask[]>(
+      `${baseUrl}/tasks?title=${searchValue}`
+    );
     return response.data;
   },
   getTask: async (id: string) => {

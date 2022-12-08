@@ -14,6 +14,7 @@ export const TaskList: FC<TaskListProps> = ({ searchValue }) => {
   const [taskList, setTaskList] = useState<ITask[]>([]);
 
   const [loading, setLoading] = useState(true);
+
   const debouncedValue = useDebounce(searchValue, 500);
 
   useEffect(() => {
@@ -29,13 +30,17 @@ export const TaskList: FC<TaskListProps> = ({ searchValue }) => {
     };
     fetch();
   }, [debouncedValue]);
+
   return (
     <>
       {taskList.length ? (
         taskList.map((el) => (
-          <div key={el.id}>
-            <TaskRow title={el.title} id={el.id} setTaskList={setTaskList} />
-          </div>
+          <TaskRow
+            key={el.id}
+            title={el.title}
+            id={el.id}
+            setTaskList={setTaskList}
+          />
         ))
       ) : (
         <Loader loading={loading} />

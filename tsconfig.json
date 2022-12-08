@@ -20,3 +20,5 @@
   },
   "include": ["src"]
 }
+
+//https://medium.com/@danil_chepelev/how-to-setup-path-aliases-with-react-typescript-and-webpack-54e579c189e1
