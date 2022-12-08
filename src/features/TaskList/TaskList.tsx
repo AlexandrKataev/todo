@@ -29,13 +29,12 @@ export const TaskList: FC<TaskListProps> = ({ searchValue }) => {
     };
     fetch();
   }, [debouncedValue]);
+
   return (
     <>
       {taskList.length ? (
         taskList.map((el) => (
-          <div key={el.id}>
-            <TaskRow title={el.title} id={el.id} setTaskList={setTaskList} />
-          </div>
+          <TaskRow title={el.title} id={el.id} setTaskList={setTaskList} key={el.id} />
         ))
       ) : (
         <Loader loading={loading} />
