@@ -10,7 +10,7 @@ export const Header: FC = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
-  const { handleTheme } = useTheme();
+  const handleTheme = useTheme();
 
   const onCLickNewTask = () => {
     navigate('task/new');

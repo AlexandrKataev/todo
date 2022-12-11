@@ -7,6 +7,7 @@ import { ITask } from '../models/ITask';
 
 export const useTasks = (searchValue: string) => {
   const navigate = useNavigate();
+
   const [taskList, setTaskList] = useState<ITask[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -34,7 +35,7 @@ export const useTasks = (searchValue: string) => {
     navigate('/');
   };
 
-  const onClickDelete = async (id: string) => {
+  const deleteTask = async (id: string) => {
     if (window.confirm('Delete task?')) {
       await taskService.deleteTask(id);
       setTaskList((prev) => prev.filter((task) => task.id !== id));
@@ -45,7 +46,7 @@ export const useTasks = (searchValue: string) => {
     () => ({
       taskList,
       postTask,
-      onClickDelete,
+      deleteTask,
       loading,
     }),
     [taskList]

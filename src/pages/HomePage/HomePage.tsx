@@ -1,29 +1,16 @@
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
 
 import styles from './HomePage.module.scss';
 
 import { Search, TaskList } from 'features';
-import { useTasks } from '../../shared/hooks/useTasks';
+import { useInput } from 'shared/hooks';
 
 export const HomePage: FC = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const { taskList, postTask, onClickDelete, loading } = useTasks(searchValue);
-  // https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/context/
-
-  const onChangeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(event.target.value);
-  };
-  const onClearSearchClick = () => {
-    setSearchValue('');
-  };
+  const { value: searchValue, onChange: onChangeSearch, clearValue } = useInput();
 
   return (
     <div className={styles.container}>
-      <Search
-        searchValue={searchValue}
-        onChangeSearch={onChangeSearch}
-        clearSearch={onClearSearchClick}
-      />
+      <Search searchValue={searchValue} onChangeSearch={onChangeSearch} clearSearch={clearValue} />
       <TaskList searchValue={searchValue} />
     </div>
   );

@@ -1,27 +1,20 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './TaskRow.module.scss';
 
 import { ITask } from 'shared/models/ITask';
 import { ItemIcon, TrashIcon } from 'shared/ui';
-
-import { taskService } from 'shared/api/services/taskService';
+import { useQueryDeleteTask } from 'shared/hooks';
 
 interface TaskRowProps extends Omit<ITask, 'content'> {
-  setTaskList: React.Dispatch<React.SetStateAction<ITask[]>>;
+  taskList: ITask[];
 }
 
-export const TaskRow: FC<TaskRowProps> = ({ title, id, setTaskList }) => {
+export const TaskRow: FC<TaskRowProps> = ({ title, id }) => {
   const navigate = useNavigate();
+  const { onClickDelete } = useQueryDeleteTask(id);
 
-  const onClickDelete = async () => {
-    if (window.confirm('Delete task?')) {
-      await taskService.deleteTask(id);
-      setTaskList((prev) => prev.filter((task) => task.id !== id));
-    }
-  };
-  const onClickTask = (e: any) => {
-    e.stopPropagation();
+  const onClickTask = () => {
     navigate(`/task/${id}`);
   };
 

@@ -12,7 +12,5 @@ export const useTheme = () => {
   const handleTheme = () => {
     theme === themes.light ? setTheme(themes.dark) : setTheme(themes.light);
   };
-  return {
-    handleTheme,
-  };
+  return handleTheme;
 };
