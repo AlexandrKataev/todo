@@ -1,9 +1,8 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from './Header.module.scss';
 
 import { useTheme } from 'shared/hooks/useTheme';
-import { getTheme, themes } from 'shared/helpers/getTheme';
 import { ThemeIcon, PlusIcon } from 'shared/ui';
 
 export const Header: FC = () => {
