@@ -23,7 +23,7 @@ export const TaskRow: FC<TaskRowProps> = ({ title, id }) => {
       <ItemIcon width={'37px'} />
       <div className={styles.title}>{title}</div>
       <div className={styles.trash}>
-        <TrashIcon width={'20px'} onClick={onClickDelete} />
+        <TrashIcon onClick={onClickDelete} />
       </div>
     </div>
   );
