@@ -10,8 +10,7 @@ export const Header: FC = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
-  const [theme, setTheme] = useState(getTheme);
-  useTheme(theme);
+  const handleTheme = useTheme();
 
   const onCLickNewTask = () => {
     navigate('task/new');
@@ -22,9 +21,7 @@ export const Header: FC = () => {
       {pathname === '/' ? <div>Searching</div> : <Link to="/">Назад</Link>}
       <div className={styles.icons}>
         <PlusIcon onClick={onCLickNewTask} />
-        <ThemeIcon
-          onClick={() => (theme === themes.light ? setTheme(themes.dark) : setTheme(themes.light))}
-        />
+        <ThemeIcon onClick={handleTheme} />
       </div>
     </div>
   );

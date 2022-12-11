@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://todo-alexanderkataev.vercel.app/",
   "dependencies": {
+    "@tanstack/react-query": "^4.19.1",
+    "@tanstack/react-query-devtools": "^4.19.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -26,8 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,7 +49,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0",
     "prettier": "2.8.1"
   }
 }

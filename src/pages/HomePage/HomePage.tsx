@@ -1,31 +1,16 @@
-import React, { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 
 import styles from './HomePage.module.scss';
 
 import { Search, TaskList } from 'features';
-import { taskService } from 'shared/api/services/taskService';
-import { useDebounce } from 'shared/hooks';
-import { ITask } from 'shared/models/ITask';
-
-import { Loader } from 'shared/ui';
+import { useInput } from 'shared/hooks';
 
 export const HomePage: FC = () => {
-  const [searchValue, setSearchValue] = useState('');
-
-  const onChangeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(event.target.value);
-  };
-  const onClearSearchClick = () => {
-    setSearchValue('');
-  };
+  const { value: searchValue, onChange: onChangeSearch, clearValue } = useInput();
 
   return (
     <div className={styles.container}>
-      <Search
-        searchValue={searchValue}
-        onChangeSearch={onChangeSearch}
-        clearSearch={onClearSearchClick}
-      />
+      <Search searchValue={searchValue} onChangeSearch={onChangeSearch} clearSearch={clearValue} />
       <TaskList searchValue={searchValue} />
     </div>
   );

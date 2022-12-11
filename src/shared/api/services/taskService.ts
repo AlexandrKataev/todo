@@ -1,24 +1,25 @@
 import axios from 'axios';
 import { ITask } from 'shared/models/ITask';
-import { baseUrl } from '../config';
+import { API_URL } from '../config';
+
+axios.defaults.baseURL = API_URL;
 
 export const taskService = {
   getTaskList: async (searchValue: string) => {
-    const response = await axios.get<ITask[]>(`${baseUrl}/tasks?title=${searchValue}`);
-
+    const response = await axios.get<ITask[]>(`/tasks?title=${searchValue}`);
     return response.data;
   },
   getTask: async (id: string) => {
-    const response = await axios.get<ITask>(`${baseUrl}/tasks/${id}`);
+    const response = await axios.get<ITask>(`/tasks/${id}`);
     return response.data;
   },
   updateTask: async (task: ITask) => {
-    await axios.put(`${baseUrl}/tasks/${task.id}`, task);
+    await axios.put(`/tasks/${task.id}`, task);
   },
   createTask: async (task: ITask) => {
-    await axios.post(`${baseUrl}/tasks/`, task);
+    await axios.post(`/tasks`, task);
   },
-  deleteTask: async (taskId: string) => {
-    await axios.delete(`${baseUrl}/tasks/${taskId}`);
+  deleteTask: async (id: string) => {
+    await axios.delete(`/tasks/${id}`);
   },
 };
