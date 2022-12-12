@@ -1,7 +1,15 @@
 import { FC, SVGProps } from 'react';
 
-import { ReactComponent as Icon } from './SearchIcon.svg';
-
 export const SearchIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
-  return <Icon {...props} width={'18px'} fill={'var(--color-main)'} />;
+  return (
+    <svg
+      {...props}
+      width={'18px'}
+      fill={'var(--color-main)'}
+      viewBox="0 0 21 22"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="m21.067 21.297-6.171-6.419a8.695 8.695 0 0 0 2.55-6.155C17.445 3.913 13.531 0 8.722 0 3.913 0 0 3.913 0 8.723c0 4.81 3.913 8.722 8.723 8.722a8.683 8.683 0 0 0 5.559-2.007l6.187 6.434a.412.412 0 0 0 .587.012.416.416 0 0 0 .011-.587ZM8.723 16.614C4.37 16.614.83 13.074.83 8.723.83 4.37 4.37.83 8.723.83c4.351 0 7.891 3.54 7.891 7.892 0 4.351-3.54 7.891-7.891 7.891Z" />
+    </svg>
+  );
 };

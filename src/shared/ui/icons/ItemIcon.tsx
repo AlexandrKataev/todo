@@ -1,7 +1,15 @@
 import { FC, SVGProps } from 'react';
 
-import { ReactComponent as Icon } from './ItemIcon.svg';
-
 export const ItemIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
-  return <Icon {...props} width={'37px'} fill={'var(--color-main)'} />;
+  return (
+    <svg
+      width={'37px'}
+      fill={'var(--color-main)'}
+      {...props}
+      viewBox="0 0 37 37"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="18.5" cy="18.5" r="18.5" />
+    </svg>
+  );
 };
