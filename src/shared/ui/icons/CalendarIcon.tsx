@@ -5,7 +5,7 @@ export const CalendarIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
     <svg
       {...props}
       fill={'var(--color-header-text)'}
-      width={'22px'}
+      width={'14px'}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >

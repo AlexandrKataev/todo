@@ -24,7 +24,8 @@ export const useQueryUpdateTask = (
   inputContent: string,
   date: string,
   isChangedTitle: boolean,
-  isChangedContent: boolean
+  isChangedContent: boolean,
+  isChangedDate: boolean
 ) => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
@@ -36,7 +37,7 @@ export const useQueryUpdateTask = (
     },
   });
   const updateTask = async () => {
-    if (inputTitle && inputContent && (isChangedTitle || isChangedContent)) {
+    if (inputTitle && inputContent && (isChangedTitle || isChangedContent || isChangedDate)) {
       mutation.mutate({
         id: taskId,
         title: inputTitle,

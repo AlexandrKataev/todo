@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 
 import styles from './NewTaskCard.module.scss';
 
-import { ItemIcon } from 'shared/ui';
+import { CalendarIcon, ItemIcon } from 'shared/ui';
 import { useInput, useQueryCreateTask } from 'shared/hooks';
 import DateTimePicker from 'react-datetime-picker';
 
@@ -21,7 +21,12 @@ export const NewTaskCard: FC = () => {
   return (
     <>
       <ItemIcon width={'100px'} />
-      <DateTimePicker onChange={setDate} value={date} />
+      <DateTimePicker
+        onChange={setDate}
+        value={date}
+        clearIcon={null}
+        calendarIcon={<CalendarIcon />}
+      />
       <input className={styles.title} value={inputTitle} onChange={onChangeTitle} maxLength={18} />
       <textarea className={styles.contentArea} value={inputContent} onChange={onChangeContent} />
       <button
