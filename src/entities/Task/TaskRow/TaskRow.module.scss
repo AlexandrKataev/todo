@@ -13,8 +13,7 @@
   background: var(--color-row-background);
   border-radius: 5px;
   &:hover {
-    opacity: 0.8;
-    color: var(--color-main);
+    background: var(--color-row-background-active);
   }
 }
 
@@ -26,14 +25,43 @@
   letter-spacing: 0em;
 }
 
-.trash {
-  margin: 0 18px 0 auto;
-  & svg {
-    fill: var(--color-content-text);
-    opacity: 0.15;
+.features {
+  margin: 0 14px 0 auto;
+  display: flex;
+
+  .date {
+    height: 20px;
+    padding: 0 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+
+    background-color: var(--color-content-background);
   }
-  &:hover svg {
+  svg {
+    fill: var(--color-icon-disabled);
+    margin-left: 10px;
+  }
+  svg:hover {
     fill: var(--color-main);
     opacity: 1;
   }
+}
+
+.today {
+  color: hsl(157, 100%, 37%);
+}
+
+.tommorow {
+  color: rgb(202, 149, 16);
+}
+
+.passed {
+  color: rgb(204, 54, 34);
+}
+
+.notsoon {
+  color: var(--color-main);
 }

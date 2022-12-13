@@ -22,6 +22,7 @@ export const useQueryUpdateTask = (
   taskId: string,
   inputTitle: string,
   inputContent: string,
+  date: string,
   isChangedTitle: boolean,
   isChangedContent: boolean
 ) => {
@@ -40,13 +41,14 @@ export const useQueryUpdateTask = (
         id: taskId,
         title: inputTitle,
         content: inputContent,
+        date: date,
       });
     }
   };
   return updateTask;
 };
 
-export const useQueryCreateTask = (inputTitle: string, inputContent: string) => {
+export const useQueryCreateTask = (inputTitle: string, inputContent: string, date: string) => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const mutation = useMutation({
@@ -61,6 +63,7 @@ export const useQueryCreateTask = (inputTitle: string, inputContent: string) => 
       mutation.mutate({
         title: inputTitle,
         content: inputContent,
+        date: date,
       } as ITask);
     }
   };

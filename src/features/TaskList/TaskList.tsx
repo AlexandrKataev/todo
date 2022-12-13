@@ -16,9 +16,13 @@ export const TaskList: FC<TaskListProps> = ({ searchValue }) => {
       {isFetching ? (
         <Loader />
       ) : taskList?.length ? (
-        taskList?.map((el) => (
-          <TaskRow key={el.id} title={el.title} id={el.id} taskList={taskList} />
-        ))
+        taskList
+          ?.sort((a, b) => {
+            return new Date(a.date).getTime() - new Date(b.date).getTime();
+          })
+          .map((el) => (
+            <TaskRow key={el.id} title={el.title} id={el.id} taskList={taskList} date={el.date} />
+          ))
       ) : (
         <div>Нет задач</div>
       )}

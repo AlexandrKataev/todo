@@ -4,3 +4,4 @@ export * from './PlusIcon';
 export * from './SearchIcon';
 export * from './ThemeIcon';
 export * from './TrashIcon';
+export * from './CalendarIcon';

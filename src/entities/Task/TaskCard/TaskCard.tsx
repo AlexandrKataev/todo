@@ -1,15 +1,18 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import styles from './TaskCard.module.scss';
 
 import { Loader, ItemIcon } from 'shared/ui';
 import { useInput, useQueryTask, useQueryUpdateTask } from 'shared/hooks';
+import DateTimePicker from 'react-datetime-picker';
 
 export const TaskCard: FC = () => {
   const { taskId } = useParams() as { taskId: string };
 
   const { task, isFetching } = useQueryTask(taskId);
+
+  const [date, setDate] = useState(new Date());
 
   const {
     value: inputTitle,
@@ -27,6 +30,7 @@ export const TaskCard: FC = () => {
     taskId,
     inputTitle,
     inputContent,
+    date.toJSON(),
     isChangedTitle,
     isChangedContent
   );
@@ -36,7 +40,8 @@ export const TaskCard: FC = () => {
   ) : (
     <>
       <ItemIcon width={'100px'} />
-      <input className={styles.title} value={inputTitle} onChange={onChangeTitle} maxLength={35} />
+      <DateTimePicker onChange={setDate} value={date} />
+      <input className={styles.title} value={inputTitle} onChange={onChangeTitle} maxLength={18} />
       <textarea className={styles.contentArea} value={inputContent} onChange={onChangeContent} />
 
       <button

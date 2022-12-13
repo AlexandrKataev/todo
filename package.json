@@ -14,7 +14,10 @@
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "axios": "^1.2.0",
+    "classnames": "^2.3.2",
+    "dayjs": "^1.11.7",
     "react": "^18.2.0",
+    "react-datetime-picker": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.4",
     "react-scripts": "5.0.1",
@@ -50,6 +53,8 @@
     ]
   },
   "devDependencies": {
+    "@types/react-datetime-picker": "^3.4.1",
+    "@types/react-time-picker": "^4.0.2",
     "prettier": "2.8.1"
   }
 }
