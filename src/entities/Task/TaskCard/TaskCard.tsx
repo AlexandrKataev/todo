@@ -4,8 +4,9 @@ import { useParams } from 'react-router-dom';
 import styles from './TaskCard.module.scss';
 
 import { Loader, ItemIcon, CalendarIcon } from 'shared/ui';
-import { useInput, useQueryTask, useQueryUpdateTask } from 'shared/hooks';
+import { useInput, useQueryTask } from 'shared/hooks';
 import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle';
+import { useQueryUpdateTask } from 'shared/hooks/tasks/useUpdateTask';
 
 // const DateTimePicker = require('react-datetime-picker/dist/entry.nostyle');
 

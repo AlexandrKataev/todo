@@ -14,7 +14,7 @@ export const useQueryTasks = (searchValue: string) => {
 };
 
 export const useQueryTask = (id: string) => {
-  const { data: task, isFetching } = useQuery(['todos', id], () => taskService.getTask(id));
+  const { data: task, isFetching } = useQuery(['todo', id], () => taskService.getTask(id));
   return { task, isFetching };
 };
 
@@ -29,6 +29,7 @@ export const useQueryUpdateTask = (
 ) => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
+
   const mutation = useMutation({
     mutationFn: taskService.updateTask,
     onSuccess: async () => {
@@ -36,6 +37,7 @@ export const useQueryUpdateTask = (
       navigate('/');
     },
   });
+
   const updateTask = async () => {
     if (inputTitle && inputContent && (isChangedTitle || isChangedContent || isChangedDate)) {
       mutation.mutate({
