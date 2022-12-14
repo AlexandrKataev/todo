@@ -2,7 +2,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding-left: 11px;
+  padding-left: 15px;
   margin-top: 16px;
   height: 55px;
   min-height: 55px;
@@ -19,7 +19,7 @@
 
 .title {
   color: var(--color-content-text);
-  margin-left: 20px;
+  margin-left: 15px;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0em;
@@ -38,7 +38,7 @@
     justify-content: center;
     font-size: 12px;
 
-    background-color: var(--color-content-background);
+    background-color: var(--color-date-background);
   }
   svg {
     fill: var(--color-icon-disabled);
@@ -51,17 +51,17 @@
 }
 
 .today {
-  color: hsl(157, 100%, 37%);
+  color: var(--color-date-today);
 }
 
 .tommorow {
-  color: rgb(202, 149, 16);
+  color: var(--color-date-tommorow);
 }
 
 .passed {
-  color: rgb(204, 54, 34);
+  color: var(--color-date-passed);
 }
 
 .notsoon {
-  color: var(--color-main);
+  color: var(--color-date-notsoon);
 }

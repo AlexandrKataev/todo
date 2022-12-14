@@ -24,7 +24,7 @@ export const TaskRow: FC<TaskRowProps> = ({ title, id, date }) => {
 
   return (
     <div className={styles.container} onClick={onClickTask}>
-      <ItemIcon width={'37px'} />
+      <ItemIcon fill={`var(--color-date-${dateStatus()})`} />
       <div className={styles.title}>{title}</div>
       <div className={styles.features}>
         <div

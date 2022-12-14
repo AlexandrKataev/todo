@@ -17,7 +17,7 @@ export const Header: FC = () => {
 
   return (
     <div className={styles.container}>
-      {pathname === '/' ? <div>Searching</div> : <Link to="/">Назад</Link>}
+      {pathname === '/' ? <div>Todo</div> : <Link to="/">Назад</Link>}
       <div className={styles.icons}>
         <PlusIcon onClick={onCLickNewTask} />
         <ThemeIcon onClick={handleTheme} />

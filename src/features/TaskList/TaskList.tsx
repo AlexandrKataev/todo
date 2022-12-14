@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { TaskRow } from 'entities/index';
-import { Loader } from 'shared/ui';
+import { Loader, NotFound } from 'shared/ui';
 import { useQueryTasks } from 'shared/hooks/useQueryTasks';
 
 interface TaskListProps {
@@ -24,7 +24,7 @@ export const TaskList: FC<TaskListProps> = ({ searchValue }) => {
             <TaskRow key={el.id} title={el.title} id={el.id} taskList={taskList} date={el.date} />
           ))
       ) : (
-        <div>Нет задач</div>
+        <NotFound />
       )}
     </>
   );

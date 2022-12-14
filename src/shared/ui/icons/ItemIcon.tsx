@@ -3,7 +3,7 @@ import { FC, SVGProps } from 'react';
 export const ItemIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
-      width={'37px'}
+      width={'16px'}
       fill={'var(--color-main)'}
       {...props}
       viewBox="0 0 37 37"

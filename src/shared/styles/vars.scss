@@ -1,7 +1,7 @@
 :root[data-theme='light'] {
   --color-main: #a900c5;
   --color-main-2: #7243b1;
-  --color-icon-disabled: hsl(249, 57%, 15%);
+  --color-icon-disabled: #cecece;
   --color-content-text: #3a273a;
   --color-content-background: #ffffff;
   --color-header-text: #ffffff;
@@ -11,6 +11,12 @@
   --color-row-background-active: hsl(300, 7%, 96%);
   --color-search: #a1a1a1;
   --color-search-border: #cecece;
+
+  --color-date-background: #ffffff;
+  --color-date-today: hsl(157, 100%, 42%);
+  --color-date-tommorow: rgb(202, 149, 16);
+  --color-date-passed: rgb(245, 13, 33);
+  --color-date-notsoon: #a900c5;
 }
 
 :root[data-theme='dark'] {
@@ -26,4 +32,10 @@
   --color-row-background-active: hsl(249, 20%, 22%);
   --color-search: #f0c8f1;
   --color-search-border: #7120ea;
+
+  --color-date-background: #221f2e;
+  --color-date-today: hsl(147, 79%, 45%);
+  --color-date-tommorow: rgb(202, 149, 16);
+  --color-date-passed: rgb(204, 54, 34);
+  --color-date-notsoon: #7120ea;
 }
