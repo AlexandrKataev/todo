@@ -65,3 +65,12 @@
 .notsoon {
   color: var(--color-date-notsoon);
 }
+
+@media screen and (max-width: 450px) {
+  .title {
+    font-size: 12px;
+  }
+  .features .date {
+    font-size: 9px;
+  }
+}
