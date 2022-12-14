@@ -2,14 +2,14 @@ import { FC } from 'react';
 
 import { TaskRow } from 'entities/index';
 import { Loader, NotFound } from 'shared/ui';
-import { useQueryTasks } from 'shared/hooks/useQueryTasks';
+import { useGetTasks } from 'shared/hooks';
 
 interface TaskListProps {
   searchValue: string;
 }
 
 export const TaskList: FC<TaskListProps> = ({ searchValue }) => {
-  const { taskList, isFetching } = useQueryTasks(searchValue);
+  const { taskList, isFetching } = useGetTasks(searchValue);
 
   return (
     <>

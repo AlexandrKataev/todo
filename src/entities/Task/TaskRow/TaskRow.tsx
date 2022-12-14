@@ -4,10 +4,10 @@ import styles from './TaskRow.module.scss';
 
 import { ITask } from 'shared/models/ITask';
 import { ItemIcon, TrashIcon } from 'shared/ui';
-import { useQueryDeleteTask } from 'shared/hooks';
 
 import cx from 'classnames';
 import { getDate } from 'shared/helpers/getDate';
+import { useDeleteTask } from 'shared/hooks';
 
 interface TaskRowProps extends Omit<ITask, 'content'> {
   taskList: ITask[];
@@ -15,7 +15,7 @@ interface TaskRowProps extends Omit<ITask, 'content'> {
 
 export const TaskRow: FC<TaskRowProps> = ({ title, id, date }) => {
   const navigate = useNavigate();
-  const { onClickDelete } = useQueryDeleteTask(id);
+  const { onClickDelete } = useDeleteTask(id);
   const { formattedDate, dateStatus } = getDate(date);
 
   const onClickTask = () => {

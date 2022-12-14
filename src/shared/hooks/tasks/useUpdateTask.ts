@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { taskService } from 'shared/api/services/taskService';
 
-export const useQueryUpdateTask = (
+export const useUpdateTask = (
   taskId: string,
   inputTitle: string,
   inputContent: string,
