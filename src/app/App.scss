@@ -4,5 +4,6 @@
   align-items: center;
   background-color: var(--color-background);
   min-height: 300px;
+  min-height: -webkit-fill-available;
   min-width: 100vw;
 }
