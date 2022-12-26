@@ -4,6 +4,10 @@
   "private": true,
   "homepage": "https://todo-alexanderkataev.vercel.app/",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.1",
+    "@mui/x-date-pickers-pro": "^5.0.12",
     "@tanstack/react-query": "^4.19.1",
     "@tanstack/react-query-devtools": "^4.19.1",
     "@testing-library/jest-dom": "^5.16.5",

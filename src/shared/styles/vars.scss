@@ -17,6 +17,10 @@
   --color-date-tommorow: rgb(202, 149, 16);
   --color-date-passed: rgb(245, 13, 33);
   --color-date-notsoon: #a900c5;
+
+  --color-calendar-background: #ffffff;
+  --color-calendar-day-background: hsl(249, 20%, 21%);
+  --color-calendar-dayoutside-background: hsl(249, 20%, 21%);
 }
 
 :root[data-theme='dark'] {
@@ -38,4 +42,11 @@
   --color-date-tommorow: rgb(202, 149, 16);
   --color-date-passed: rgb(204, 54, 34);
   --color-date-notsoon: #7120ea;
+
+  --color-calendar-background: hsl(249, 20%, 21%);
+  --color-calendar-day-background: hsl(249, 19%, 15%);
+  --color-calendar-today-background: hsl(240, 17%, 27%);
+  --color-calendar-selected-background: #7120ea;
+  --color-calendar-dayoutside-background: hsl(249, 19%, 19%);
+  --color-calendar-dayoutside-text: hsl(247, 16%, 11%);
 }
