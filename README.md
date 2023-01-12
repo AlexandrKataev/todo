@@ -1,6 +1,11 @@
 # TODO
 
-https://todo-alexanderkataev.vercel.app/
+## Technology Stack
 
-1. `git clone https://github.com/AlexandrKataev/todo.git`
-2. `npm install`
+- React
+- React Query
+- TypeScript
+- React Router
+- CSS-Modules / SCSS
+- Axios
+- Vercel
