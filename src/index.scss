@@ -4,3 +4,7 @@
 @import './shared/styles/Calendar';
 @import './shared/styles/DateTimePicker';
 @import './shared/styles/Clock';
+
+.MuiInputBase-input {
+  cursor: pointer;
+}
