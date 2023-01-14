@@ -2,69 +2,10 @@ import { FC, useEffect, useState } from 'react';
 
 import styles from './NewTaskCard.module.scss';
 
-import { CalendarIcon, ItemIcon } from 'shared/ui';
+import { DateTimePicker, ItemIcon } from 'shared/ui';
 import { useInput, useQueryCreateTask } from 'shared/hooks';
 
 import dayjs, { Dayjs } from 'dayjs';
-import TextField from '@mui/material/TextField';
-
-import { SxProps } from '@mui/material';
-import { MobileDateTimePicker } from '@mui/x-date-pickers-pro';
-
-const popperSx: SxProps = {
-  '& .MuiPaper-root': {
-    color: 'var(--color-main)',
-    bgcolor: 'var(--color-calendar-background)',
-    borderRadius: '10px',
-  },
-
-  '& .MuiPickersDay-dayWithMargin': {
-    color: 'rgb(229,228,226)',
-    backgroundColor: 'var(--color-calendar-day-background)',
-    borderRadius: '10px',
-  },
-  '.MuiPickersDay-today': {
-    color: 'rgb(229,228,226)',
-    backgroundColor: 'var(--color-calendar-today-background)',
-    border: 'none',
-  },
-  '.Mui-selected': {
-    color: 'white',
-    backgroundColor: 'var(--color-calendar-selected-background)',
-  },
-  '.Mui-selected:hover': {
-    color: 'white',
-    backgroundColor: 'var(--color-calendar-selected-background)',
-  },
-  '.Mui-selected:focus': {
-    color: 'white',
-    backgroundColor: 'var(--color-calendar-selected-background)',
-  },
-  '& .MuiPickersDay-dayOutsideMonth': {
-    color: 'var(--color-calendar-dayoutside-text)',
-    backgroundColor: 'var(--color-calendar-dayoutside-background)',
-    borderRadius: '10px',
-  },
-
-  '& .MuiTabs-root': { backgroundColor: 'rgba(120, 120, 120, 0.4)' },
-};
-
-const inputSx: SxProps = {
-  cursor: 'pointer',
-  // bgcolor: 'var(--color-row-background)',
-  bgcolor: 'var(--color-row-background)',
-  color: 'var(--color-main)',
-  fontSize: '16px',
-  width: 160,
-  height: 30,
-  border: 'none',
-  borderRadius: '10px',
-  '& fieldset': { border: 'none' },
-};
-
-const componentsProps: SxProps = {
-  cursor: 'pointer',
-};
 
 export const NewTaskCard: FC = () => {
   const { value: inputTitle, onChange: onChangeTitle } = useInput();
@@ -85,21 +26,7 @@ export const NewTaskCard: FC = () => {
   return (
     <>
       <ItemIcon width={'100px'} />
-      <MobileDateTimePicker
-        className={styles.date}
-        views={['month', 'day', 'hours', 'minutes']}
-        hideTabs={false}
-        showDaysOutsideCurrentMonth
-        components={{ OpenPickerIcon: CalendarIcon }}
-        InputProps={{
-          sx: inputSx,
-        }}
-        OpenPickerButtonProps={{ sx: { color: 'var(--color-main)' } }}
-        DialogProps={{ sx: popperSx }}
-        value={date}
-        onChange={handleChange}
-        renderInput={(params) => <TextField {...params} />}
-      />
+      <DateTimePicker date={date} handleChange={handleChange} />
       <input className={styles.title} value={inputTitle} onChange={onChangeTitle} maxLength={18} />
       <textarea className={styles.contentArea} value={inputContent} onChange={onChangeContent} />
       <button

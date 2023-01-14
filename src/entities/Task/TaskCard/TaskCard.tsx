@@ -3,22 +3,21 @@ import { useParams } from 'react-router-dom';
 
 import styles from './TaskCard.module.scss';
 
-import { Loader, ItemIcon, CalendarIcon } from 'shared/ui';
+import { Loader, ItemIcon, DateTimePicker } from 'shared/ui';
 import { useInput, useGetTask, useUpdateTask } from 'shared/hooks';
-import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle';
 
-// const DateTimePicker = require('react-datetime-picker/dist/entry.nostyle');
+import dayjs, { Dayjs } from 'dayjs';
 
 export const TaskCard: FC = () => {
   const { taskId } = useParams() as { taskId: string };
 
   const { task, isFetching } = useGetTask(taskId);
 
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState<Dayjs>(dayjs());
   const [isChangedDate, setIsChangedDate] = useState(false);
 
   useEffect(() => {
-    task && setDate(new Date(task.date));
+    task && setDate(dayjs(task.date));
   }, [task]);
 
   const {
@@ -43,8 +42,8 @@ export const TaskCard: FC = () => {
     isChangedDate
   );
 
-  const onChangeDate = (date: Date) => {
-    setDate(date);
+  const handleChange = (newValue: Dayjs | null) => {
+    newValue && setDate(newValue);
     setIsChangedDate(true);
   };
 
@@ -53,12 +52,8 @@ export const TaskCard: FC = () => {
   ) : (
     <>
       <ItemIcon width={'100px'} />
-      <DateTimePicker
-        onChange={onChangeDate}
-        value={date}
-        clearIcon={null}
-        calendarIcon={<CalendarIcon />}
-      />
+      <DateTimePicker date={date} handleChange={handleChange} />
+
       <input className={styles.title} value={inputTitle} onChange={onChangeTitle} maxLength={18} />
       <textarea className={styles.contentArea} value={inputContent} onChange={onChangeContent} />
 

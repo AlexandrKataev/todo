@@ -2,9 +2,6 @@
 @import './shared/styles/default';
 
 @import './shared/styles/Calendar';
-@import './shared/styles/DateTimePicker';
-@import './shared/styles/Clock';
 
-.MuiInputBase-input {
-  cursor: pointer;
-}
+@import './shared/styles/Clock';
+@import './shared/styles/DateTimePicker';
