@@ -18,9 +18,12 @@
   --color-date-passed: rgb(245, 13, 33);
   --color-date-notsoon: #a900c5;
 
-  --color-calendar-background: #ffffff;
-  --color-calendar-day-background: hsl(249, 20%, 21%);
-  --color-calendar-dayoutside-background: hsl(249, 20%, 21%);
+  --color-calendar-background: hsl(300, 7%, 80%);
+  --color-calendar-day-background: hsl(300, 47%, 60%);
+  --color-calendar-today-background: hsl(300, 47%, 75%);
+  --color-calendar-selected-background: #7120ea;
+  --color-calendar-dayoutside-background: hsl(300, 21%, 77%);
+  --color-calendar-dayoutside-text: hsl(289, 9%, 47%);
 }
 
 :root[data-theme='dark'] {
