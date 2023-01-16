@@ -25,7 +25,7 @@ export const NewTaskCard: FC = () => {
 
   return (
     <>
-      <ItemIcon width={'100px'} />
+      <ItemIcon width={'100px'} className={styles.icon} />
       <DateTimePicker date={date} handleChange={handleChange} />
       <input className={styles.title} value={inputTitle} onChange={onChangeTitle} maxLength={18} />
       <textarea className={styles.contentArea} value={inputContent} onChange={onChangeContent} />

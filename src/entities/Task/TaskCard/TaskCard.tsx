@@ -51,7 +51,7 @@ export const TaskCard: FC = () => {
     <Loader />
   ) : (
     <>
-      <ItemIcon width={'100px'} />
+      <ItemIcon width={'100px'} className={styles.icon} />
       <DateTimePicker date={date} handleChange={handleChange} />
 
       <input className={styles.title} value={inputTitle} onChange={onChangeTitle} maxLength={18} />
