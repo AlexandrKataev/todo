@@ -1,6 +1,20 @@
 # TODO
 
-https://todo-alexanderkataev.vercel.app/
+ToDo app
+https://todo-alexanderkataev.vercel.app
 
-1. `git clone https://github.com/AlexandrKataev/todo.git`
-2. `npm install`
+## Technology Stack
+
+- React
+- React Query
+- TypeScript
+- React Router
+- CSS-Modules / SCSS
+- Axios
+- Vercel
+
+## Screenshots
+
+![Изображение не найдено](./src/assets/screenshot.png 'Front-end structure')
+![Изображение не найдено](./src/assets/screenshot2.png 'Front-end structure')
+![Изображение не найдено](./src/assets/screenshot3.png 'Front-end structure')
