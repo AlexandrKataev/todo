@@ -14,14 +14,6 @@ export const useUpdateTask = (
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
-  // const mutation = useMutation({
-  //   mutationFn: taskService.updateTask,
-  //   onSuccess: async () => {
-  //     await queryClient.invalidateQueries(['todos']);
-  //     navigate('/');
-  //   },
-  // });
-
   const mutation = useMutation({
     mutationFn: taskService.updateTask,
 
@@ -38,13 +30,6 @@ export const useUpdateTask = (
       navigate('/');
     },
   });
-
-  // const mutation = useMutation({
-  //   mutationFn: taskService.updateTask,
-  //   onSuccess: (data, variables) => {
-  //     queryClient.setQueryData(['todo', { id: variables.id }], data);
-  //   },
-  // });
 
   const updateTask = async () => {
     if (inputTitle && inputContent && (isChangedTitle || isChangedContent || isChangedDate)) {
